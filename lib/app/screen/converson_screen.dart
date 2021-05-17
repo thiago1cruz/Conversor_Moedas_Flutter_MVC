@@ -103,14 +103,20 @@ class _HomeState extends State<HomeConversor> {
   @override
   Widget build(BuildContext context) => Scaffold(
       appBar: AppBar(
-        title: Text("Teste"),
+        title: Text("Conversor"),
         actions: [
           IconButton(
               icon: Icon(Icons.refresh_outlined),
               onPressed: () {
                 contoller.init();
                 contoller.converterReal(contoller.real.text);               
-              })
+              }),
+              RaisedButton(
+                onPressed: () { 
+                  contoller.limparCampos();
+                 },
+                child: Text('Limpar'),
+              )
         ],
       ),
       body: GestureDetector(
